@@ -29,24 +29,3 @@ export class Arango {
         ).all();
     }
 }
-
-// const { Database, aql } = require("arangojs");
-
-// const db = new Database();
-// const pokemons = db.collection("my-pokemons");
-
-// async function main() {
-//   try {
-//     const pokemons = await db.query(aql`
-//       FOR pokemon IN ${pokemons}
-//       FILTER pokemon.type == "fire"
-//       RETURN pokemon
-//     `);
-//     console.log("My pokemons, let me show you them:");
-//     for await (const pokemon of pokemons) {
-//       console.log(pokemon.name);
-//     }
-//   } catch (err) {
-//     console.error(err.message);
-//   }
-// }
