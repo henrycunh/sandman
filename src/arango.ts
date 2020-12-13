@@ -20,12 +20,12 @@ export class Arango {
     }) {
         return (
             await Arango.$.query(aql`
-            for item in \`${aql.literal(params.collection)}\`
-                ${aql.literal(
-                    params.condition ? `filter ${params.condition}` : ""
-                )}
-                return item
-        `)
+                for item in \`${aql.literal(params.collection)}\`
+                    ${aql.literal(
+                        params.condition ? `filter ${params.condition}` : ""
+                    )}
+                    return item
+            `)
         ).all();
     }
 }
