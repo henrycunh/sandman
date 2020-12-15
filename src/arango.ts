@@ -1,4 +1,5 @@
 import { Database, aql } from "arangojs";
+import { AqlQuery } from "arangojs/aql";
 
 export class Arango {
     private static $ = new Database({
@@ -27,5 +28,9 @@ export class Arango {
                     return item
             `)
         ).all();
+    }
+
+    static async query(query: AqlQuery) {
+        return (await Arango.$.query(query)).all();
     }
 }
